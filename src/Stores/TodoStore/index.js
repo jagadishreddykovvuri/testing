@@ -12,8 +12,8 @@ class TodoStore {
         this.todos.push(new TodoModel(description))
 
     }
-    @action.bound deleteTodo(description) {
-        this.todos = this.todos.filter(todo => todo.todoDesc != description)
+    @action.bound deleteTodo(todoObject) {
+        this.todos.remove(todoObject);
     }
 
 }

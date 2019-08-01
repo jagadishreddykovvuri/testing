@@ -8,7 +8,7 @@ describe('TodoStore ', () => {
         expect(todoStore.todos[0].todoDesc).toBe("Learn TDD")
     });
     it("should delete to do from todo list", () => {
-        todoStore.deleteTodo("Learn TDD")
+        todoStore.deleteTodo(todoStore.todos[0])
         expect(todoStore.todos.length).toBe(0)
     })
 
