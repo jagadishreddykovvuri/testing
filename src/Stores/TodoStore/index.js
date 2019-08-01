@@ -5,6 +5,7 @@ import {
 import TodoModel from "./Model/TodoModel.js"
 class TodoStore {
     @observable todos
+    @observable todoFilter
     constructor() {
         this.todos = []
     }
@@ -14,6 +15,9 @@ class TodoStore {
     }
     @action.bound deleteTodo(todoObject) {
         this.todos.remove(todoObject);
+    }
+    @action.bound changeFilter(filterValue) {
+        this.todoFilter = filterValue
     }
 
 }
