@@ -11,5 +11,13 @@ describe('TodoStore ', () => {
         todoStore.deleteTodo(todoStore.todos[0])
         expect(todoStore.todos.length).toBe(0)
     })
+    it("should able to change filter", () => {
+        todoStore.changeFilter("ALL")
+        expect(todoStore.todoFilter).toBe("ALL")
+        todoStore.changeFilter("COMPLETED")
+        expect(todoStore.todoFilter).toBe("COMPLETED")
+        todoStore.changeFilter("ACTIVE")
+        expect(todoStore.todoFilter).toBe("ACTIVE")
+    })
 
 });

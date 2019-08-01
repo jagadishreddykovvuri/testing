@@ -1,18 +1,16 @@
 components
-    * [ ] TodoApp
-        * [ ] EnterTodo
-        * [ ] TodoList
-            * [ ] TodoItem
-        * [ ] TodoFooter
+_ [ ] TodoApp
+_ [ ] EnterTodo
+_ [ ] TodoList
+_ [ ] TodoItem
+_ [ ] TodoFooter
 Stores
-    * [ ] TodoStore
-        * [ ] addtoTodo
-        * [ ] filterTodos
-        * [ ] clearCompleted
-        * [ ] activeItemLeft
-        * [ ] changeFilter
-    * [ ] TodoModel
-        * [ ] updateTodo
-        * [ ] toggleTodoStatus
-        * [ ] deleteTodo
-        
+_ [ ] TodoStore
+_ [x] addtoTodo
+_ [ ] filterTodos
+_ [ ] clearCompleted
+_ [ ] activeItemLeft
+_ [ ] changeFilter
+_ [x] deleteTodo
+_ [ ] TodoModel
+_ [ ] updateTodo \* [ ] toggleTodoStatus
