@@ -7,12 +7,11 @@ describe("Todoapp", () => {
     jest.spyOn(todoStore, "addTodo");
     const { getByPlaceholderText } = render(<TodoApp />);
     const inputBox = getByPlaceholderText("What needs to be Done?");
-    const changeEvent = {
+    fireEvent.change(inputBox, {
       target: {
         value: "jagadish"
       }
-    };
-    fireEvent.change(inputBox, changeEvent);
+    });
     fireEvent.keyDown(inputBox, { key: "Enter", keyCode: 13, code: 13 });
     expect(todoStore.addTodo).toHaveBeenCalledWith("jagadish");
   });
