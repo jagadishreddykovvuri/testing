@@ -1,6 +1,6 @@
 components
 _ [] TodoApp
-_ [] EnterTodo
+_ [x] EnterTodo
 _ [] TodoList
 _ [] TodoItem
 _ [] TodoFooter
