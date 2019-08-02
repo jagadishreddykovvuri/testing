@@ -17,9 +17,3 @@ _ [x] deleteTodo
 [] TodoModel
 \_ [] updateTodo  
  [] toggleTodoStatus
-it("should return count for number of tasks active",()=>{
-expect(todoStore.undoneLeft).toBe(3)
-})
-@computed get undoneLeft(){
-return this.todos.filter(todo=> todo.taskStatus===false).length
-}

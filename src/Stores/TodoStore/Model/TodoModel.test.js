@@ -15,8 +15,5 @@ describe("TodoStore ", () => {
         todoStore.todos[2].toggleTaskStatus()
         expect(todoStore.todos[2].taskStatus).toBeFalsy()
     })
-    it("should update todo description", () => {
-        todoStore.todos[3].updateTodoDescription("learn mobx")
-        expect(todoStore.todos[3].todoDesc).toBe("learn mobx")
-    })
+
 })
