@@ -32,10 +32,10 @@ describe("TodoStore ", () => {
         todoStore.todos[1].taskStatus = true
         todoStore.todos[3].taskStatus = true
         todoStore.changeFilter(filterValues.all);
-        expect(todoStore.filteredTodos).toBe(5)
+        expect(todoStore.filteredTodos.length).toBe(5)
         todoStore.changeFilter(filterValues.completed);
-        expect(todoStore.filteredTodos).toBe(2)
+        expect(todoStore.filteredTodos.length).toBe(2)
         todoStore.changeFilter(filterValues.active);
-        expect(todoStore.filteredTodos).toBe(3)
+        expect(todoStore.filteredTodos.length).toBe(3)
     })
 });

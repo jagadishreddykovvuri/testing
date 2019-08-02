@@ -1,7 +1,11 @@
 import {
     observable,
-    action
+    action,
+    computed
 } from "mobx";
+import {
+    filterValues
+} from "../../constant.js";
 import TodoModel from "./Model/TodoModel.js"
 class TodoStore {
     @observable todos
@@ -19,6 +23,7 @@ class TodoStore {
     @action.bound changeFilter(filterValue) {
         this.todoFilter = filterValue
     }
+
 
 }
 export default TodoStore
