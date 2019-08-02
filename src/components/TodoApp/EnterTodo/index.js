@@ -21,6 +21,7 @@ class EnterTodo extends Component {
     return (
       <>
         <input
+          value={this.state.inputText}
           onChange={this.handleChange}
           type="text"
           placeholder="What needs to be Done?"
