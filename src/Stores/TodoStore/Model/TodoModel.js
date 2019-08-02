@@ -11,6 +11,9 @@ class TodoModel {
         this.todoDesc = description
         this.taskStatus = false
     }
+    @action.bound toggleTaskStatus() {
+        this.taskStatus = !this.taskStatus
+    }
 
 }
 export default TodoModel
