@@ -12,5 +12,8 @@ describe("TodoStore ", () => {
     it("should update todo description", () => {
         todoStore.todos[2].toggleTaskStatus()
         expect(todoStore.todos[2].taskStatus).toBeTruthy()
+        todoStore.todos[2].toggleTaskStatus()
+        expect(todoStore.todos[2].taskStatus).toBeFalsy()
+
     })
 })
