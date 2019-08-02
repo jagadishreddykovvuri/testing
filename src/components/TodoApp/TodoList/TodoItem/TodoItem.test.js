@@ -2,6 +2,7 @@ import React from "react";
 import TodoItem from "./index";
 import { render, cleanup, fireEvent } from "@testing-library/react";
 import TodoModel from "../../../../Stores/TodoStore/Model/TodoModel";
+afterEach(cleanup);
 describe("TodoItem", () => {
   it("should able to toggle the task Status of the todo", () => {
     const todoModel = new TodoModel("jagadish");
@@ -11,6 +12,6 @@ describe("TodoItem", () => {
     expect(todoModel.taskStatus).toBeFalsy();
     fireEvent.click(checkBox);
     expect(todoModel.toggleTaskStatus).toHaveBeenCalledTimes(1);
-    expect(todoModel.taskStatus).toBeFalsy();
+    expect(todoModel.taskStatus).toBeTruthy();
   });
 });
