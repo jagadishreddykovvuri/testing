@@ -24,15 +24,14 @@ class TodoStore {
         this.todoFilter = filterValue
     }
     @computed get filteredTodos() {
-        let todos;
-        if (this.todoFilter === filterValues.all) {
-            todos = this.todos
-        } else if (this.todoFilter === filterValues.completed) {
-            todos = this.todos.filter(todo => todo.taskStatus === true)
+
+        if (this.todoFilter === filterValues.completed) {
+            return this.todos.filter(todo => todo.taskStatus === true)
+        } else if (this.todoFilter === filterValues.active) {
+            return this.todos.filter(todo => todo.taskStatus === false)
         } else {
-            todos = this.todos.filter(todo => todo.taskStatus === false)
+            return this.todos
         }
-        return todos
     }
 
 }
