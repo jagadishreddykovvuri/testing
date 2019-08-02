@@ -21,7 +21,7 @@ describe("Enter Todo", () => {
       }
     };
     fireEvent.change(inputBox, changeEvent);
-    fireEvent.keyPress(inputBox, { key: "Enter", keyCode: 13, code: 13 });
+    fireEvent.keyDown(inputBox, { key: "Enter", keyCode: 13, code: 13 });
     expect(onPressEnterKey).toHaveBeenCalledTimes(1);
   });
 });
