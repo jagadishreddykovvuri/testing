@@ -1,15 +1,10 @@
-import React, {
-  Component
-} from "react";
+import React, { Component } from "react";
 class EnterTodo extends Component {
   render() {
-    return ( <
-      >
-      <
-      input type = "text"
-      placeholder = "What needs to be Done?" / >
-      <
-      />
+    return (
+      <>
+        <input type="text" placeholder="What needs to be Done?" />
+      </>
     );
   }
 }
