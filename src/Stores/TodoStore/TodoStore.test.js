@@ -46,4 +46,10 @@ describe("TodoStore ", () => {
         todoStore.changeFilter(filterValues.active);
         expect(todoStore.filteredTodos.length).toBe(3)
     })
+    it("should able to clear completed todos in todolist", () => {
+        todoStore.todos[1].taskStatus = true
+        todoStore.todos[3].taskStatus = true
+        todoStore.clearCompleted()
+        expect(todoStore.todos.length).toBe(3)
+    })
 });

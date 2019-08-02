@@ -7,7 +7,7 @@ _ [] TodoFooter
 Stores
 _ [] TodoStore
 _ [x] addtoTodo
-_ [*] filterTodos
+_ [x] filterTodos
 _ [] clearCompleted
 _ [] activeItemLeft
 _ [x] changeFilter
