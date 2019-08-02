@@ -23,7 +23,17 @@ class TodoStore {
     @action.bound changeFilter(filterValue) {
         this.todoFilter = filterValue
     }
-
+    @computed get filteredTodos() {
+        let todos;
+        if (this.todoFilter === filterValues.all) {
+            todos = this.todos
+        } else if (this.todoFilter === filterValues.completed) {
+            todos = this.todos.filter(todo => todo.taskStatus === true)
+        } else {
+            todos = this.todos.filter(todo => todo.taskStatus === false)
+        }
+        return todos
+    }
 
 }
 export default TodoStore
