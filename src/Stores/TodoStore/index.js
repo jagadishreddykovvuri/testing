@@ -9,7 +9,7 @@ import {
 import TodoModel from "./Model/TodoModel.js"
 class TodoStore {
     @observable todos
-    @observable todoFilter
+    @observable todoFilter = filterValues.all
     constructor() {
         this.todos = []
     }
