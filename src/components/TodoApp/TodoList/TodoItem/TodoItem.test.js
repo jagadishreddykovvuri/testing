@@ -19,7 +19,9 @@ describe("TodoItem", () => {
     const todoStore = new TodoStore();
     todoStore.addTodo("jagadish");
     jest.spyOn(todoStore, "deleteTodo");
-    const { getByTestId } = render(<TodoItem todo={todoStore.todos[0]} />);
+    const { getByTestId } = render(
+      <TodoItem todo={todoStore.todos[0]} todoStore={todoStore} />
+    );
     const deletebutton = getByTestId("delete");
     expect(todoStore.todos.length).toBe(1);
     fireEvent.click(deletebutton);
