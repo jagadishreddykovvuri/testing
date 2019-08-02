@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 class TodoItem extends Component {
   onCheckHandle = () => {
-    this.props.todoModel.toggleTaskStatus();
+    this.props.todo.toggleTaskStatus();
   };
   onDelete = () => {
     this.props.todoStore.deleteTodo(this.props.todo);

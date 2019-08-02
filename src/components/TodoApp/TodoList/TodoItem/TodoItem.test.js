@@ -5,19 +5,23 @@ import TodoModel from "../../../../Stores/TodoStore/Model/TodoModel";
 import TodoStore from "../../../../Stores/TodoStore";
 afterEach(cleanup);
 describe("TodoItem", () => {
+  let todoStore;
+  beforeEach(() => {
+    todoStore = new TodoStore();
+    todoStore.addTodo("jagadish");
+  });
   it("should able to toggle the task Status of the todo", () => {
-    const todoModel = new TodoModel("jagadish");
-    jest.spyOn(todoModel, "toggleTaskStatus");
-    const { getByTestId } = render(<TodoItem todoModel={todoModel} />);
+    jest.spyOn(todoStore.todos[0], "toggleTaskStatus");
+    const { getByTestId } = render(
+      <TodoItem todo={todoStore.todos[0]} todoStore={todoStore} />
+    );
     const checkBox = getByTestId("checkbox");
-    expect(todoModel.taskStatus).toBeFalsy();
+    expect(todoStore.todos[0].taskStatus).toBeFalsy();
     fireEvent.click(checkBox);
-    expect(todoModel.toggleTaskStatus).toHaveBeenCalledTimes(1);
-    expect(todoModel.taskStatus).toBeTruthy();
+    expect(todoStore.todos[0].toggleTaskStatus).toHaveBeenCalledTimes(1);
+    expect(todoStore.todos[0].taskStatus).toBeTruthy();
   });
   it("should able to delete todo in todolist on click of delete button", () => {
-    const todoStore = new TodoStore();
-    todoStore.addTodo("jagadish");
     jest.spyOn(todoStore, "deleteTodo");
     const { getByTestId } = render(
       <TodoItem todo={todoStore.todos[0]} todoStore={todoStore} />
@@ -25,6 +29,7 @@ describe("TodoItem", () => {
     const deletebutton = getByTestId("delete");
     expect(todoStore.todos.length).toBe(1);
     fireEvent.click(deletebutton);
+    expect(todoStore.deleteTodo).toBeCalled();
     expect(todoStore.todos.length).toBe(0);
   });
 });
