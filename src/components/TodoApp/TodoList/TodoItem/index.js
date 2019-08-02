@@ -3,6 +3,9 @@ class TodoItem extends Component {
   onCheckHandle = () => {
     this.props.todoModel.toggleTaskStatus();
   };
+  onDelete = () => {
+    this.props.todoStore.deleteTodo(this.props.todo);
+  };
   render() {
     return (
       <>
@@ -11,6 +14,9 @@ class TodoItem extends Component {
           data-testid="checkbox"
           onClick={this.onCheckHandle}
         />
+        <button data-testid="delete" onClick={this.onDelete}>
+          X
+        </button>
       </>
     );
   }
