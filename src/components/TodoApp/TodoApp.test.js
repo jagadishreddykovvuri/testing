@@ -1,9 +1,9 @@
+import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import TodoApp from "./index";
-import TodoStore from "../../Stores/TodoStore/index";
+import todoStore from "../../Stores/instances";
 describe("Todoapp", () => {
   it("it should call todoStore function on press enter ke in input inputBox", () => {
-    const todoStore = new TodoStore();
     jest.spyOn(todoStore, "addTodo");
     const { getByPlaceholderText } = render(<TodoApp />);
     const inputBox = getByPlaceholderText("What needs to be Done?");
