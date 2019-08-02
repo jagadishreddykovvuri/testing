@@ -17,6 +17,6 @@ describe("TodoStore ", () => {
     })
     it("should update todo description", () => {
         todoStore.todos[3].updateTodoDescription("learn mobx")
-        expect(todoStore.todos[3]).toBe("learn mobx")
+        expect(todoStore.todos[3].todoDesc).toBe("learn mobx")
     })
 })
