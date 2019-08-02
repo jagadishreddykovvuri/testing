@@ -53,5 +53,8 @@ describe("TodoStore ", () => {
     })
     it("should return count for number of tasks active", () => {
         expect(todoStore.undoneLeft).toBe(3)
+        todoStore.todos[4].taskStatus = true
+        expect(todoStore.undoneLeft).toBe(2)
+
     })
 });
