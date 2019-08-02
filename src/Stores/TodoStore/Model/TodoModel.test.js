@@ -7,5 +7,11 @@ describe("TodoModel ", () => {
         todoModel.toggleTaskStatus()
         expect(todoModel.taskStatus).toBeFalsy()
     })
+    it("should Update todo description", () => {
+        const todoModel = new TodoModel("jagadish")
+        todoModel.updateTodoDescription("reddy")
+        expect(todoModel.todoDesc).toBe("reddy")
+
+    })
 
 })
