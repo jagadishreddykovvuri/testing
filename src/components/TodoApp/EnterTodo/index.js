@@ -10,6 +10,9 @@ class EnterTodo extends Component {
   onPressEnterKey = e => {
     if (e.keyCode === 13) {
       this.props.onPressEnterKey(e.target.value);
+      this.setState({
+        inputText: ""
+      });
     }
   };
   handleChange = event => {
