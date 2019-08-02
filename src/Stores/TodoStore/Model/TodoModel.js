@@ -1,5 +1,6 @@
 import {
-    observable
+    observable,
+    action
 } from "mobx"
 class TodoModel {
     id
@@ -10,6 +11,7 @@ class TodoModel {
         this.todoDesc = description
         this.taskStatus = false
     }
+
 
 }
 export default TodoModel
