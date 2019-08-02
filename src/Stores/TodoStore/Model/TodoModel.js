@@ -16,6 +16,7 @@ class TodoModel {
     }
     @action.bound updateTodoDescription(description) {
         this.todoDesc = description
+
     }
 
 }
