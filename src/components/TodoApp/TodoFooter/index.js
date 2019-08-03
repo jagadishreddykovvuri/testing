@@ -14,9 +14,15 @@ class TodoFooter extends Component {
   render() {
     return (
       <>
-        <button data-testid="all" onClick={this.handleClickAll} />
-        <button data-testid="completed" onClick={this.handleClickCompleted} />
-        <button data-testid="active" onClick={this.handleClickActive} />
+        <button data-testid="all" onClick={this.handleClickAll}>
+          ALL
+        </button>
+        <button data-testid="completed" onClick={this.handleClickCompleted}>
+          COMPLETED
+        </button>
+        <button data-testid="active" onClick={this.handleClickActive}>
+          ACTIVE
+        </button>
       </>
     );
   }
