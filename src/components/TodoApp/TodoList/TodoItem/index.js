@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import EnterTodo from "../../EnterTodo/index";
 import { observer } from "mobx-react";
+import { Div } from "../../TodoFooter/StyledComponents";
 @observer
 class TodoItem extends Component {
   constructor(props) {
@@ -39,17 +40,18 @@ class TodoItem extends Component {
   };
   render() {
     return (
-      <>
+      <Div>
         <input
           type="checkbox"
           data-testid="checkbox"
           onClick={this.onCheckHandle}
+          checked={this.props.todo.taskStatus}
         />
         {this.onDescorEditable()}
         <button data-testid="delete" onClick={this.onDelete}>
           X
         </button>
-      </>
+      </Div>
     );
   }
 }

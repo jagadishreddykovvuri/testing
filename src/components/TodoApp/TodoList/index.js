@@ -7,7 +7,7 @@ class TodoList extends Component {
     let id = 0;
     return (
       <>
-        {this.props.todoStore.todos.map(todo => {
+        {this.props.todoStore.filteredTodos.map(todo => {
           id = id + 1;
           return (
             <TodoItem key={id} todo={todo} todoStore={this.props.todoStore} />
