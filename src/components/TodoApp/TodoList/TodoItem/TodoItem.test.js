@@ -26,11 +26,15 @@ describe("TodoItem", () => {
     const { getByTestId } = render(
       <TodoItem todo={todoStore.todos[0]} todoStore={todoStore} />
     );
+    window.confirm = jest.fn(() => true);
     const deletebutton = getByTestId("delete");
     expect(todoStore.todos.length).toBe(1);
     fireEvent.click(deletebutton);
+    expect(window.confirm).toBeCalled();
     expect(todoStore.deleteTodo).toBeCalled();
     expect(todoStore.todos.length).toBe(0);
+    window.confirm = jest.fn(() => false);
+    expect(window.confirm).toBeCalledTimes(0);
   });
   it("should be get editable test on double click and update to do description", () => {
     jest.spyOn(todoStore.todos[0], "updateTodoDescription");

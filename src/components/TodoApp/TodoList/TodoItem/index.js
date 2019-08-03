@@ -44,7 +44,7 @@ class TodoItem extends Component {
         <input
           type="checkbox"
           data-testid="checkbox"
-          onClick={this.onCheckHandle}
+          onChange={this.onCheckHandle}
           checked={this.props.todo.taskStatus}
         />
         {this.onDescorEditable()}
