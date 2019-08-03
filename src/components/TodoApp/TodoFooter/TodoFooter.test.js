@@ -1,8 +1,9 @@
 import React from "react";
 import TodoStore from "../../../Stores/TodoStore/index";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import TodoFooter from "./index";
 import { filterValues } from "../../../constant";
+afterEach(cleanup);
 describe("TodoFooter", () => {
   it("should call change filter function with all value in todostore on click all button ", () => {
     const todoStore = new TodoStore();
