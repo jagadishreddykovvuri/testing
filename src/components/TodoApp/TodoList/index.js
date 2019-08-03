@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem/index";
+import { observer } from "mobx-react";
+@observer
 class TodoList extends Component {
   render() {
     let id = 0;

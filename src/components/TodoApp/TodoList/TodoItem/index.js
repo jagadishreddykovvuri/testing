@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import EnterTodo from "../../EnterTodo/index";
+import { observer } from "mobx-react";
+@observer
 class TodoItem extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +22,9 @@ class TodoItem extends Component {
   };
   onPressEnterKey = e => {
     this.props.todo.updateTodoDescription(e);
+    this.setState({
+      isDoubleClicked: false
+    });
   };
   onDescorEditable = () => {
     if (this.state.isDoubleClicked) {
@@ -27,7 +32,7 @@ class TodoItem extends Component {
     } else {
       return (
         <p data-testid="tododesc" onDoubleClick={this.ondblClick}>
-          descs
+          {this.props.todo.todoDesc}
         </p>
       );
     }
