@@ -29,6 +29,7 @@ describe("Enter Todo", () => {
     const { getByPlaceholderText } = render(
       <EnterTodo onPressEnterKey={onPressEnterKey} todoName="" />
     );
+
     const inputBox = getByPlaceholderText("What needs to be Done?");
     const changeEvent = {
       target: {
