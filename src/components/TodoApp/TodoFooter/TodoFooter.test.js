@@ -9,6 +9,7 @@ describe("TodoFooter", () => {
   beforeEach(() => {
     todoStore = new TodoStore();
     jest.spyOn(todoStore, "changeFilter");
+    jest.spyOn(todoStore, "clearCompleted");
   });
   it("should call change filter function with all value in todostore on click all button ", () => {
     const { getByTestId } = render(<TodoFooter todoStore={todoStore} />);
@@ -30,7 +31,6 @@ describe("TodoFooter", () => {
     expect(todoStore.changeFilter).toBeCalledWith(filterValues.active);
   });
   it("should call the Clear completed function in todostoore when click on clea completed", () => {
-    jest.spyOn(todoStore, "clearCompleted");
     const { getByTestId } = render(<TodoFooter todoStore={todoStore} />);
     const clearButton = getByTestId("clear");
     fireEvent.click(clearButton);
