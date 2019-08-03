@@ -32,4 +32,24 @@ describe("TodoItem", () => {
     expect(todoStore.deleteTodo).toBeCalled();
     expect(todoStore.todos.length).toBe(0);
   });
+  it("should be get editable test on double click and update to do description", () => {
+    jest.spyOn(todoStore.todos[0], "updateTodoDescription");
+    const { getByTestId, getByPlaceholderText } = render(
+      <TodoItem todo={todoStore.todos[0]} todoStore={todoStore} />
+    );
+    const deletebutton = getByTestId("tododesc");
+    fireEvent.doubleClick(deletebutton);
+    const inputbox = getByPlaceholderText("What needs to be Done?");
+    expect(inputbox).toBeDefined();
+    fireEvent.change(inputbox, {
+      target: {
+        value: "jagadishreddy"
+      }
+    });
+    fireEvent.keyDown(inputbox, { key: "Enter", keyCode: 13, code: 13 });
+    expect(todoStore.todos[0].updateTodoDescription).toHaveBeenCalledWith(
+      "jagadishreddy"
+    );
+    expect(todoStore.todos[0].todoDesc).toBe("jagadishreddy");
+  });
 });
