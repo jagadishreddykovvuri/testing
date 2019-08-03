@@ -14,7 +14,9 @@ class TodoApp extends Component {
       <>
         <EnterTodo onPressEnterKey={this.onPressEnterKey} todoName="" />
         <TodoList todoStore={this.props.todoStore} />
-        <TodoFooter todoStore={this.props.todoStore} />
+        {this.props.todoStore.todos.length > 0 && (
+          <TodoFooter todoStore={this.props.todoStore} />
+        )}
       </>
     );
   }
