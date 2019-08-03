@@ -29,4 +29,11 @@ describe("TodoFooter", () => {
     fireEvent.click(completedButton);
     expect(todoStore.changeFilter).toBeCalledWith(filterValues.active);
   });
+  it("should call the Clear completed function in todostoore when click on clea completed", () => {
+    jest.spyOn(todoStore, "clearCompleted");
+    const { getByTestId } = render(<TodoFooter todoStore={todoStore} />);
+    const clearButton = getByTestId("clear");
+    fireEvent.click(clearButton);
+    expect(todoStore.clearCompleted).toBeCalled();
+  });
 });
