@@ -3,7 +3,7 @@ class EnterTodo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputText: ""
+      inputText: this.props.todoName
     };
   }
 

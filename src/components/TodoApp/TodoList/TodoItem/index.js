@@ -31,7 +31,12 @@ class TodoItem extends Component {
   };
   onDescorEditable = () => {
     if (this.state.isDoubleClicked) {
-      return <EnterTodo onPressEnterKey={this.onPressEnterKey} />;
+      return (
+        <EnterTodo
+          todoName={this.props.todo.todoDesc}
+          onPressEnterKey={this.onPressEnterKey}
+        />
+      );
     } else {
       return (
         <p data-testid="tododesc" onDoubleClick={this.ondblClick}>
