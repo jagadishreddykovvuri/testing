@@ -38,11 +38,19 @@ class TodoItem extends Component {
         />
       );
     } else {
-      return (
-        <p data-testid="tododesc" onDoubleClick={this.ondblClick}>
-          {this.props.todo.todoDesc}
-        </p>
-      );
+      if (this.props.todo.taskStatus) {
+        return (
+          <strike data-testid="tododesc" onDoubleClick={this.ondblClick}>
+            {this.props.todo.todoDesc}
+          </strike>
+        );
+      } else {
+        return (
+          <p data-testid="tododesc" onDoubleClick={this.ondblClick}>
+            {this.props.todo.todoDesc}
+          </p>
+        );
+      }
     }
   };
   render() {

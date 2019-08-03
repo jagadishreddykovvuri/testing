@@ -12,7 +12,7 @@ describe("Enter Todo", () => {
   it("should able to change text and on enter call onPressEnter function", () => {
     const onPressEnterKey = jest.fn();
     const { getByPlaceholderText } = render(
-      <EnterTodo onPressEnterKey={onPressEnterKey} />
+      <EnterTodo onPressEnterKey={onPressEnterKey} todoName="" />
     );
     const inputBox = getByPlaceholderText("What needs to be Done?");
     const changeEvent = {
@@ -23,5 +23,20 @@ describe("Enter Todo", () => {
     fireEvent.change(inputBox, changeEvent);
     fireEvent.keyDown(inputBox, { key: "Enter", keyCode: 13, code: 13 });
     expect(onPressEnterKey).toHaveBeenCalledTimes(1);
+  });
+  it("should able to change text and on enter call onPressEnter function", () => {
+    const onPressEnterKey = jest.fn();
+    const { getByPlaceholderText } = render(
+      <EnterTodo onPressEnterKey={onPressEnterKey} todoName="" />
+    );
+    const inputBox = getByPlaceholderText("What needs to be Done?");
+    const changeEvent = {
+      target: {
+        value: "    "
+      }
+    };
+    fireEvent.change(inputBox, changeEvent);
+    fireEvent.keyDown(inputBox, { key: "Enter", keyCode: 13, code: 13 });
+    expect(onPressEnterKey).toHaveBeenCalledTimes(0);
   });
 });

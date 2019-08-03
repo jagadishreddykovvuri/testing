@@ -12,7 +12,7 @@ class TodoApp extends Component {
   render() {
     return (
       <>
-        <EnterTodo onPressEnterKey={this.onPressEnterKey} />
+        <EnterTodo onPressEnterKey={this.onPressEnterKey} todoName="" />
         <TodoList todoStore={this.props.todoStore} />
         <TodoFooter todoStore={this.props.todoStore} />
       </>
