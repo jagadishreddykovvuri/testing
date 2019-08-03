@@ -14,7 +14,9 @@ class TodoItem extends Component {
     this.props.todo.toggleTaskStatus();
   };
   onDelete = () => {
-    this.props.todoStore.deleteTodo(this.props.todo);
+    if (window.confirm("you to want delete task ? ")) {
+      this.props.todoStore.deleteTodo(this.props.todo);
+    }
   };
   ondblClick = () => {
     this.setState({
