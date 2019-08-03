@@ -23,4 +23,11 @@ describe("TodoFooter", () => {
     fireEvent.click(completedButton);
     expect(todoStore.changeFilter).toBeCalledWith(filterValues.completed);
   });
+  it("should call change filter function with active value in todostore on click active button ", () => {
+    const { getByTestId } = render(<TodoFooter todoStore={todoStore} />);
+
+    const completedButton = getByTestId("active");
+    fireEvent.click(completedButton);
+    expect(todoStore.changeFilter).toBeCalledWith(filterValues.active);
+  });
 });
