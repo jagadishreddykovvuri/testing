@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import TodoList from "./index";
 import TodoStore from "../../../Stores/TodoStore";
 describe("TodoList", () => {
-  it("should render an component upto todolist size", () => {
+  it("should render an todo item components upto todolist size", () => {
     const todoStore = new TodoStore();
     todoStore.addTodo("Learn TDD");
     todoStore.addTodo("Learn TDD1");
